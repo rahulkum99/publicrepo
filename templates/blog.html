@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block blogactive %}active {% endblock blogactive %}
+
+{% block title %}My Blog Page {% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-3">
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>Our All Posts</h1>
+                {% for post in posts %}
+                <div class="row">
+                    <div style="width: 35%; height:210px">
+                        <img style="width: 100%;" src="{{post.thumbnail.url}}" alt="Some Images Here">
+                    </div>
+                    <div style="width: 59%; height:210px;" class="mx-3">
+                        <h5>{{post.title}}</h5>
+                        <p > by :- <b>{{post.author}}</b> Time Upload:-{{post.time_upload}}</p>
+                        <p>{{post.overview|safe|truncatechars:120}}</p>
+                        <a href="/pview/{{post.slug}}"><b>Read More</b></a>
+                    </div>
+                </div>
+                {% endfor %}
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock body %}

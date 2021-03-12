@@ -1,0 +1,8 @@
+*{
+    box-sizing: border-box;
+}
+
+.foot{
+    background-color:rgb(37, 36, 36)!important;
+    color: azure!important;
+}

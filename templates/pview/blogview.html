@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}{{post.title}}{% endblock title %}
+
+{% block body %}
+
+<div class="container-fluid my-3">
+    
+    <div class="row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+
+
+            <div class="col-md-12">
+                <div  class="my-2">
+                    <img style="width: 100%;" src="{{posts.thumbnail.url}}" alt="Some Images Here">
+                </div>
+                <div  class="mx-3 my-1">
+                    <h5>{{posts.title}}</h5>
+                    <p> by :- <b>{{posts.author}}</b> Time Upload:-{{posts.time_upload}}</p>
+                    <p>{{posts.overview}}|safe</p>
+                    
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+</div>
+
+{% endblock body %}
